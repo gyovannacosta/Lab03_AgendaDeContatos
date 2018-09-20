@@ -16,20 +16,20 @@ public class Main {
 			+				 "(S)air" + System.lineSeparator()
 			+				 System.lineSeparator() + "Opção> ");
 			
-			entrada = scanner.nextLine();
+			entrada = scanner.nextLine().toLowerCase();
 			
-			if(entrada.toLowerCase().equals("c")) {
+			if(entrada.equals("c")) {
 				System.out.println(cadastroValido(scanner, agenda));
 				
 			}
-			else if(entrada.toLowerCase().equals("l")) {
+			else if(entrada.equals("l")) {
 				System.out.println(agenda.listarContatos());
 			}
-			else if(entrada.toLowerCase().equals("e")) {
+			else if(entrada.equals("e")) {
 				System.out.println(buscaContato(scanner, agenda));
 				
 			}
-			else if(entrada.toLowerCase().equals("s")) {
+			else if(entrada.equals("s")) {
 				break;
 			}
 			else {
@@ -80,6 +80,20 @@ public class Main {
 		}catch(NumberFormatException e) {
 			return "POSIÇÃO INVÁLIDA!" + System.lineSeparator();
 		}
-
 	}
+	
+	/**private static String validarPosicao(String posicao) {
+		try {
+			if(Integer.parseInt(posicao) > 0 && Integer.parseInt(posicao) < 101) {
+				return "ok";
+			}
+			else {
+				throw new NumberFormatException("POSIÇÃO INVÁLIDA");
+			}
+		}catch(NullPointerException s){
+			return "POSIÇÃO INVÁLIDA!" + System.lineSeparator();
+		}catch(NumberFormatException e) {
+			return "POSIÇÃO INVÁLIDA!" + System.lineSeparator();
+		}
+	}**/
 	}
