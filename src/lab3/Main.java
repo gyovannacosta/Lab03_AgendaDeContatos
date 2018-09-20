@@ -23,9 +23,10 @@ public class Main {
 				
 			}
 			else if(entrada.toLowerCase().equals("l")) {
-				
+				System.out.println(agenda.listarContatos());
 			}
 			else if(entrada.toLowerCase().equals("e")) {
+				System.out.println(buscaContato(scanner, agenda));
 				
 			}
 			else if(entrada.toLowerCase().equals("s")) {
@@ -38,10 +39,27 @@ public class Main {
 
 	}
 
+	private static String buscaContato(Scanner scanner, Agenda agenda) {
+		System.out.print("Contato> ");
+		String posicao = scanner.nextLine();
+		try {
+			if(Integer.parseInt(posicao) > 0 && Integer.parseInt(posicao) < 101) {
+				return agenda.buscarContato(Integer.parseInt(posicao));
+			}
+			else {
+				throw new NumberFormatException("POSIÇÃO INVÁLIDA");
+			}
+		}catch(NullPointerException s){
+			return "POSIÇÃO INVÁLIDA!" + System.lineSeparator();
+		}catch(NumberFormatException e) {
+			return "POSIÇÃO INVÁLIDA!" + System.lineSeparator();
+		}
+		
+	}
+
 	private static String cadastroValido(Scanner scanner, Agenda agenda) {
-		String posicao;
 		System.out.print("Posição: ");
-		posicao = scanner.nextLine();
+		String posicao = scanner.nextLine();
 		try {
 			if(Integer.parseInt(posicao) > 0 && Integer.parseInt(posicao) < 101) {
 				System.out.print("Nome: ");
@@ -55,11 +73,13 @@ public class Main {
 				return "CADASTRO REALIZADO!" + System.lineSeparator();
 			}
 			else {
-				return "POSIÇÃO INVÁLIDA!" + System.lineSeparator();
+				throw new NumberFormatException("POSIÇÃO INVÁLIDA");
 			}
-		}catch(NumberFormatException e){
+		}catch(NullPointerException s){
+			return "POSIÇÃO INVÁLIDA!" + System.lineSeparator();
+		}catch(NumberFormatException e) {
 			return "POSIÇÃO INVÁLIDA!" + System.lineSeparator();
 		}
 
 	}
-}
+	}
