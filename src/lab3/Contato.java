@@ -6,9 +6,27 @@ public class Contato {
 	private String telefone;
 	
 	public Contato(String nome, String sobrenome, String telefone) {
+		
+		if (nome == null || sobrenome == null) {
+			throw new NullPointerException("NOME INVÁLIDO!");
+		}
+
+		if (nome.trim().equals("") || sobrenome.trim().equals("")) {
+			throw new IllegalArgumentException("NOME INVÁLIDO!");
+		}
+
+		if (telefone == null) {
+			throw new NullPointerException("TELEFONE INVÁLIDO!");
+		}
+
+		if (telefone.trim().equals("")) {
+			throw new IllegalArgumentException("TELEFONE INVÁLIDO!");
+		}
+		
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.telefone = telefone;
+
 	}
 
 	public String getNome() {
