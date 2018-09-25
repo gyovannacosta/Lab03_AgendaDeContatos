@@ -4,9 +4,9 @@ public class Contato {
 	private String nome;
 	private String sobrenome;
 	private String telefone;
-	
+
 	public Contato(String nome, String sobrenome, String telefone) {
-		
+
 		if (nome == null || sobrenome == null) {
 			throw new NullPointerException("NOME INVÁLIDO!");
 		}
@@ -22,7 +22,7 @@ public class Contato {
 		if (telefone.trim().equals("")) {
 			throw new IllegalArgumentException("TELEFONE INVÁLIDO!");
 		}
-		
+
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.telefone = telefone;
@@ -36,7 +36,7 @@ public class Contato {
 	public String getSobrenome() {
 		return this.sobrenome;
 	}
-	
+
 	@Override
 	public String toString() {
 		return this.nome + " " + this.sobrenome + " - " + this.telefone;
@@ -78,6 +78,5 @@ public class Contato {
 			return false;
 		return true;
 	}
-	
-	
+
 }

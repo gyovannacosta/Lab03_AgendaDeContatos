@@ -10,8 +10,8 @@ public class Agenda {
 	}
 
 	public String cadastraContado(String nome, String sobrenome, String telefone, int posicao) {
-		if(posicao > 0 && posicao < 101) {
-			contato[posicao - 1] = new Contato (nome, sobrenome, telefone);
+		if (posicao > 0 && posicao < 101) {
+			contato[posicao - 1] = new Contato(nome, sobrenome, telefone);
 			return "CADASTRO REALIZADO!" + System.lineSeparator();
 		}
 		return "POSIÇÃO INVÁLIDA!" + System.lineSeparator();
@@ -19,21 +19,21 @@ public class Agenda {
 
 	public String retornaContato(int posicao) {
 		return this.contato[posicao - 1].toString() + System.lineSeparator();
-	
 	}
-	
+
 	public boolean existeContato(int posicao) {
-		if(this.contato[posicao -1] != null) {
+		if (this.contato[posicao - 1] != null) {
 			return true;
 		}
 		return false;
 	}
-		
+
 	public String listarContatos() {
 		String listar = "";
-		for (int i = 0; i < contato.length; i++) {
-			if(contato[i] != null) {
-				listar += (i+1) + " - " + contato[i].getNome() + " " + contato[i].getSobrenome() + System.lineSeparator();
+		for (int i = 0; i < this.contato.length; i++) {
+			if (this.contato[i] != null) {
+				listar += (i + 1) + " - " + this.contato[i].getNome() + " " + this.contato[i].getSobrenome()
+						+ System.lineSeparator();
 			}
 		}
 		return listar.trim();

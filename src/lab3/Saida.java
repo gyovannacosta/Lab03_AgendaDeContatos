@@ -29,11 +29,11 @@ public class Saida {
 	public String telefone() {
 		return "Telefone: ";
 	}
-	
+
 	public String contato() {
 		return "Contato> ";
 	}
-	
+
 	public String posIvld() {
 		return "POSIÇÃO INVÁLIDA!";
 	}
