@@ -2,6 +2,14 @@ package lab3;
 
 import java.util.Scanner;
 
+/**
+ * Classe Main que tem como objetivo saída de opções de menu para a tela do
+ * usuário cadastrar contato, exibir contato, listar quantos contatos existem
+ * cadastrados na agenda ou sair do menu.
+ * 
+ * @author Deborah Gyovanna
+ *
+ */
 public class Main {
 
 	public static void main(String[] args) {
@@ -29,6 +37,17 @@ public class Main {
 
 	}
 
+	/**
+	 * Método buscaContato() é um método privado que tem como objetivo buscar um
+	 * contato existente na agenda e retorná-lo, caso a posição seja menor que 1 ou
+	 * maior que 100 retornar a mensagem de Posição inválida.
+	 * 
+	 * @param scanner Scanner de leitura de entrada.
+	 * @param opcao   Classe com objetivo de fornecer saída que apareçerá na tela do
+	 *                usuário para que o mesmo saiba que informações são necessárias
+	 *                para busca.
+	 * @param agenda  Objeto Agenda onde o contato será repassado para busca.
+	 */
 	private static void buscaContato(Scanner scanner, Saida opcao, Agenda agenda) {
 		System.out.print(opcao.contato());
 		int posicao = scanner.nextInt();
@@ -42,6 +61,18 @@ public class Main {
 
 	}
 
+	/**
+	 * Método cadastroValido() é um método privado que tem como objetivo pedir ao
+	 * usuário informações de nome, sobrenome, telefone e posição para que o contato
+	 * seja cadastrado na agenda, além de verificar se a posição informada é de fato
+	 * um número inteiro.
+	 * 
+	 * @param scanner Scanner de leitura de entrada.
+	 * @param opcao   Classe com objetivo de fornecer saída que apareçerá na tela do
+	 *                usuário para que o mesmo saiba que informações são necessárias
+	 *                para cadastro.
+	 * @param agenda  Objeto Agenda onde o contato será repassado para cadastro.
+	 */
 	private static void cadastroValido(Scanner scanner, Saida opcao, Agenda agenda) {
 
 		try {
